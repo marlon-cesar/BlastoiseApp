@@ -1,3 +1,4 @@
+using BlastoiseApp.Application.Services;
 using BlastoiseApp.Data.Contexts;
 using BlastoiseApp.Data.Repositories;
 using BlastoiseApp.Domain.Interfaces.Repositories;
@@ -20,8 +21,8 @@ CultureInfo.CurrentUICulture = cultureInfo;
 builder.Services.AddHttpClient();
 
 builder.Services
-    .AddDbContext<BlastoiseAppDbContext>(_ => _
-        .UseSqlServer(builder.Configuration.GetConnectionString("Default")));
+		.AddDbContext<BlastoiseAppDbContext>(_ => _
+				.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
 builder.Services.AddMvc();
 
@@ -36,12 +37,12 @@ var app = builder.Build();
 
 if (app.Environment.IsProduction())
 {
-    app.UseExceptionHandler("/Error/Index");
-    app.UseHsts();
+	app.UseExceptionHandler("/Error/Index");
+	app.UseHsts();
 }
 else
 {
-    app.UseDeveloperExceptionPage();
+	app.UseDeveloperExceptionPage();
 }
 
 
@@ -61,6 +62,7 @@ app.Run();
 
 static void ConfigureServices(IServiceCollection services)
 {
-    services.AddScoped<IPokemonRepository, PokemonRepository>();
+	services.AddScoped<IPokemonRepository, PokemonRepository>();
+	services.AddScoped<IPokemonService, PokemonService>();
 }
 

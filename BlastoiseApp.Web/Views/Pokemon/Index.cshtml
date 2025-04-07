@@ -1,0 +1,10 @@
+﻿@model List<PokemonListDTO>
+
+@{
+    ViewData["Title"] = "Pokémons";
+}
+
+@foreach (var pokemon in Model)
+{
+    <span>@pokemon.Name</span>
+}

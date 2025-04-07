@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BlastoiseApp.Application\BlastoiseApp.Application.csproj" />
     <ProjectReference Include="..\BlastoiseApp.Data\BlastoiseApp.Data.csproj" />
   </ItemGroup>
 
