@@ -13,31 +13,16 @@ namespace BlastoiseApp.Config
         {
             CultureConfig();
             ClientsConfig(services);
-           // AddContext(services, configuration);
             AddServices(services);
 
-            services.AddMvc();
         }
 
 
-        private static void CultureConfig()
-        {
-            var cultureInfo = new CultureInfo("pt-BR");
-            cultureInfo.NumberFormat.CurrencySymbol = "R$";
-
-            CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
-            CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
-            CultureInfo.CurrentCulture = cultureInfo;
-            CultureInfo.CurrentUICulture = cultureInfo;
-        }
+        
 
 
-        private static void ClientsConfig(IServiceCollection services) => services.AddHttpClient();
+        private static void ClientsConfig(IServiceCollection services) => 
 
-        private static void AddContext(IServiceCollection services, IConfiguration configuration) =>
-        services
-            .AddDbContext<BlastoiseAppDbContext>(_ => _
-                .UseNpgsql(configuration.GetConnectionString("Main")));
 
         private static void AddServices(IServiceCollection services)
         {
