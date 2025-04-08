@@ -10,11 +10,18 @@
 		Task<TEntity?> GetByIdAsync(int id);
 
 		/// <summary>
-		///   Busca uma lista entidade pela expressão passada
+		/// Busca uma lista entidade pela expressão passada
 		/// </summary>
 		/// <param name="expression">Expressão Linq</param>		
 		/// <returns>Task<List<TEntity>?></returns>
 		Task<List<TEntity>> SearchAsync(Expression<Func<TEntity, bool>> expression);
+
+		/// <summary>
+		/// Busca toda lista da entidade
+		/// </summary>
+		/// <param name="expression">Expressão Linq</param>		
+		/// <returns>Task<List<TEntity>?></returns>
+		Task<List<TEntity>> GetAllAsync();
 
 		/// <summary>
 		/// Exclui uma entidade da base de dados.
@@ -35,7 +42,14 @@
 		/// </summary>
 		/// <param name="entity">Entidade para inclusão.</param>
 		/// <returns>Task.</returns>
-		Task InsertAsync(TEntity entity);
+		Task CreateAsync(TEntity entity);
+
+		/// <summary>
+		///   Busca uma lista entidade pela expressão passada
+		/// </summary>
+		/// <param name="expression">Expressão Linq</param>		
+		/// <returns>Task<List<TEntity>?></returns>
+		Task<bool> AnyAsync(Expression<Func<TEntity, bool>> expression);
 
 	}
 }

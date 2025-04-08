@@ -5,3 +5,4 @@ global using BlastoiseApp.Domain.Interfaces.Repositories.Common;
 global using BlastoiseApp.Domain.DTOs.Pokemons;
 global using System.Linq.Expressions;
 global using BlastoiseApp.Domain.Interfaces.Entities;
+

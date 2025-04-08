@@ -54,7 +54,7 @@ app.UseRouting();
 //app.UseAuthentication();
 app.UseAuthorization();
 app.UseResponseCaching();
-app.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id:guid?}");
+app.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
 
 
 app.Run();

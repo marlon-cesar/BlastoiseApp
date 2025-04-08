@@ -4,7 +4,53 @@
     ViewData["Title"] = "Pokémons";
 }
 
-@foreach (var pokemon in Model)
-{
-    <span>@pokemon.Name</span>
-}
+<a class="btn btn-primary" role="button" asp-controller="Pokemon" asp-action="Create">Novo Pokémon</a>
+
+<table class="table" border="1">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Código</th>
+            <th>Ativo</th>
+            <th>Criado em</th>
+            <th>Atualizado em</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+
+    @if (Model.Count == 0)
+    {
+        <tr>
+            <td colspan="4">
+                Não há pokémons cadastrados.
+            </td>
+        </tr>
+    }
+    else
+    {
+        @foreach (var pokemon in Model)
+        {
+            <tr>
+                <td>
+                    @pokemon.Name
+                </td>
+                <td>
+                    @pokemon.Code
+                </td>
+                <td>
+                    @(pokemon.Active ? "Sim" : "Não")
+                </td>
+                <td>
+                    @pokemon.CreatedAt.ToString("dd/MM/yyyy HH:mm:ss")
+                </td>
+                <td>
+                    @pokemon.UpdatedAt?.ToString("dd/MM/yyyy HH:mm:ss")
+                </td>
+                <td>
+                    <a class="btn btn-primary" role="button" asp-controller="Pokemon" asp-action="Edit" asp-route-id="@pokemon.Id">Editar</a>
+                    <a class="btn btn-danger" role="button" asp-controller="Pokemon" asp-action="Delete" asp-route-id="@pokemon.Id">Excluir</a>
+                </td>
+            </tr>
+        }
+    }
+</table>
