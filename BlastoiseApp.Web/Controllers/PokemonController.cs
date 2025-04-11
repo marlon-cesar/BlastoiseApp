@@ -23,22 +23,33 @@ namespace BlastoiseApp.Web.Controllers
 		{
 			var model = new CreatePokemonDTO() { Active = true };
 
-			return View();
+			return View(model);
 		}
 
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> Create(CreatePokemonDTO model)
 		{
-			if (!ModelState.IsValid)
+			try
+			{
+				if (!ModelState.IsValid)
+					return View(model);
+
+				var (success, errorMessage) = await _pokemonService.CreateAsync(model);
+
+				if (!success)
+				{
+					TempData["ErrorMessage"] = errorMessage;
+					return View(model);
+				}
+
+				return RedirectToAction("Index");
+			}
+			catch (Exception ex)
+			{
+				TempData["ErrorMessage"] = "Não foi possível cadastrar o pokémon. Tente novamente mais tarde.";
 				return View(model);
-
-			var (success, errorMessage) = await _pokemonService.CreateAsync(model);
-
-			if(!success)
-				return View(model);
-
-			return RedirectToAction("Index");
+			}
 		}
 
 
@@ -53,15 +64,26 @@ namespace BlastoiseApp.Web.Controllers
 		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> Edit(UpdatePokemonDTO model)
 		{
-			if (!ModelState.IsValid)
+			try
+			{
+				if (!ModelState.IsValid)
+					return View(model);
+
+				var (success, errorMessage) = await _pokemonService.UpdateAsync(model);
+
+				if (!success)
+				{
+					TempData["ErrorMessage"] = errorMessage;
+					return View(model);
+				}
+
+				return RedirectToAction("Index");
+			}
+			catch (Exception ex)
+			{
+				TempData["ErrorMessage"] = "Não foi possível editar o pokémon. Tente novamente mais tarde.";
 				return View(model);
-
-			var (success, errorMessage) = await _pokemonService.UpdateAsync(model);
-
-			if(!success)
-				return View(model);
-
-			return RedirectToAction("Index");
+			}
 		}
 
 
