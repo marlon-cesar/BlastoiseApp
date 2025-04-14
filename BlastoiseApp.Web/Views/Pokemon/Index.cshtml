@@ -40,8 +40,15 @@
                 <td class="text-center">
                     @pokemon.Code
                 </td>
-                <td class="text-center">
-                    @(pokemon.Active ? "Sim" : "Não")
+                <td class="text-center ">
+                    @if (pokemon.Active)
+                    {
+                        <i class="fa-solid fa-check text-success"></i>
+                    }
+                    else
+                    {
+                        <i class="fa-solid fa-xmark text-danger"></i>
+                    }
                 </td>
                 <td class="text-center">
                     @pokemon.CreatedAt.ToString("dd/MM/yyyy HH:mm:ss")
