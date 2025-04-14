@@ -54,11 +54,18 @@
                     @pokemon.CreatedAt.ToString("dd/MM/yyyy HH:mm:ss")
                 </td>
                 <td class="text-center">
-                    @pokemon.UpdatedAt?.ToString("dd/MM/yyyy HH:mm:ss")
+                    @if (pokemon.UpdatedAt != null)
+                    {
+                        @pokemon.UpdatedAt.Value.ToString("dd/MM/yyyy HH:mm:ss")
+                    }
+                    else
+                    {
+                        <span>-</span>
+                    }
                 </td>
                 <td class="text-center">
-                    <a class="btn btn-primary" role="button" asp-controller="Pokemon" asp-action="Edit" asp-route-id="@pokemon.Id">Editar</a>
-                    <a class="btn btn-danger" role="button" asp-controller="Pokemon" asp-action="Delete" asp-route-id="@pokemon.Id">Excluir</a>
+                    <a class="btn btn-primary" role="button" asp-controller="Pokemon" asp-action="Edit" asp-route-id="@pokemon.Id"><i class="fa-solid fa-pen"></i></a>
+                    <a class="btn btn-danger" role="button" asp-controller="Pokemon" asp-action="Delete" asp-route-id="@pokemon.Id"><i class="fa-solid fa-trash"></i></a>
                 </td>
             </tr>
         }
