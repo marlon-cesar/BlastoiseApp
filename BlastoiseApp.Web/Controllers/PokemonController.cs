@@ -91,7 +91,7 @@ namespace BlastoiseApp.Web.Controllers
 		{
 			var (success, errorMessage) = await _pokemonService.DeleteByIdAsync(id);
 
-			return RedirectToAction("Index");
+			return Json(new { success, errorMessage });
 		}
 
 	}

@@ -4,6 +4,11 @@
     ViewData["Title"] = "Pokémons";
 }
 
+@section Scripts{
+
+    <script src="~/js/Pokemon/pokemon.js" asp-append-version="true"></script>
+}
+
 <div class="text-end">
     <a class="btn btn-primary mb-2" role="button" asp-controller="Pokemon" asp-action="Create">Novo Pokémon</a>
 </div>
@@ -65,7 +70,7 @@
                 </td>
                 <td class="text-center">
                     <a class="btn btn-primary" role="button" asp-controller="Pokemon" asp-action="Edit" asp-route-id="@pokemon.Id"><i class="fa-solid fa-pen"></i></a>
-                    <a class="btn btn-danger" role="button" asp-controller="Pokemon" asp-action="Delete" asp-route-id="@pokemon.Id"><i class="fa-solid fa-trash"></i></a>
+                    <a class="btn btn-danger" role="button" name="btn-delete-pokemon" data-pokemon-id="@pokemon.Id"><i class="fa-solid fa-trash"></i></a>
                 </td>
             </tr>
         }
