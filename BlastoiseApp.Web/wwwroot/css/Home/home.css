@@ -1,0 +1,19 @@
+﻿.texto-home {
+	margin-top: 1em;
+	text-align: center;
+	font-size: 3rem;
+	font-weight: bold;
+	color: darkred
+}
+
+.texto-meio {
+	color: black;
+	font-weight: bold;
+	font-size: 25px;
+	margin-top: 15px;
+	text-align: center;
+}
+
+.carrossel-pokemon img {
+	height: 300px;
+}
