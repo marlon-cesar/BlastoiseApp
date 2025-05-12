@@ -64,5 +64,8 @@ static void ConfigureServices(IServiceCollection services)
 {
 	services.AddScoped<IPokemonRepository, PokemonRepository>();
 	services.AddScoped<IPokemonService, PokemonService>();
+
+	services.AddScoped<IContactRepository, ContactRepository>();
+	services.AddScoped<IContactService, ContactService>();
 }
 
