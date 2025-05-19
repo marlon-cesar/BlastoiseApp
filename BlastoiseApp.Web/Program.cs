@@ -24,7 +24,7 @@ builder.Services
 		.AddDbContext<BlastoiseAppDbContext>(_ => _
 				.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
-builder.Services.AddMvc();
+builder.Services.AddMvc().AddRazorRuntimeCompilation();
 
 builder.Services.AddControllersWithViews();
 
@@ -64,5 +64,8 @@ static void ConfigureServices(IServiceCollection services)
 {
 	services.AddScoped<IPokemonRepository, PokemonRepository>();
 	services.AddScoped<IPokemonService, PokemonService>();
+
+	services.AddScoped<IContactRepository, ContactRepository>();
+	services.AddScoped<IContactService, ContactService>();
 }
 
