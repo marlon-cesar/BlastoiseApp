@@ -25,6 +25,19 @@ namespace BlastoiseApp.Web.Controllers
 			return RedirectToAction("Index");
 		}
 
+		public IActionResult Teste()
+		{
+			TesteModel model = new TesteModel();
+			model.Nome = "Gabriela";
+			model.Idade = 25;
+			model.Habilidades.Add("C#");
+			model.Habilidades.Add("Python");
+			model.Habilidades.Add("Java");
+			model.Habilidades.Add("HTML");
+			
+			return View(model);
+		}
+
 	}
 
 }
