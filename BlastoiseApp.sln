@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-Domain", "3-Domain", "{09
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlastoiseApp.Domain", "BlastoiseApp.Domain\BlastoiseApp.Domain.csproj", "{05C07CAF-55A8-40BD-9994-13BEDC1EE10E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-Data", "4-Data", "{F9975268-33DB-4516-9F67-CB4DBD8DB4A3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-Infrastructure", "4-Infrastructure", "{F9975268-33DB-4516-9F67-CB4DBD8DB4A3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlastoiseApp.Data", "BlastoiseApp.Data\BlastoiseApp.Data.csproj", "{BD41687B-CE61-4385-A4B7-2E81BC7779EF}"
 EndProject
@@ -23,14 +23,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0-Read", "0-Read", "{355F35
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5-Infrastructure", "5-Infrastructure", "{02C4255F-74CF-404C-93E3-526A2DBC9D2F}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6-Tests", "6-Tests", "{71BF1CE4-EF27-4BF5-98EB-D8A36D014EFF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlastoiseApp.Data.Tests", "BlastoiseApp.Data.Tests\BlastoiseApp.Data.Tests.csproj", "{025357E6-BFC3-41BB-B60A-0D0A892DAFA1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlaastoiseApp.BackgroundJobs", "BlaastoiseApp.BackgroundJobs\BlaastoiseApp.BackgroundJobs.csproj", "{D6CD666E-2EE5-4A23-87DE-2EC9A781B576}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,14 +46,6 @@ Global
 		{BD41687B-CE61-4385-A4B7-2E81BC7779EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD41687B-CE61-4385-A4B7-2E81BC7779EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD41687B-CE61-4385-A4B7-2E81BC7779EF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{025357E6-BFC3-41BB-B60A-0D0A892DAFA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{025357E6-BFC3-41BB-B60A-0D0A892DAFA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{025357E6-BFC3-41BB-B60A-0D0A892DAFA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{025357E6-BFC3-41BB-B60A-0D0A892DAFA1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D6CD666E-2EE5-4A23-87DE-2EC9A781B576}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D6CD666E-2EE5-4A23-87DE-2EC9A781B576}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D6CD666E-2EE5-4A23-87DE-2EC9A781B576}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D6CD666E-2EE5-4A23-87DE-2EC9A781B576}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,8 +55,6 @@ Global
 		{7AD4F542-6A7E-44F6-96DE-9A130EB464D2} = {EB41D2D0-8981-4EF1-A679-B5FC5F514C8C}
 		{05C07CAF-55A8-40BD-9994-13BEDC1EE10E} = {0974BFD5-FE7E-4A2D-87B5-CF44BB70F06B}
 		{BD41687B-CE61-4385-A4B7-2E81BC7779EF} = {F9975268-33DB-4516-9F67-CB4DBD8DB4A3}
-		{025357E6-BFC3-41BB-B60A-0D0A892DAFA1} = {71BF1CE4-EF27-4BF5-98EB-D8A36D014EFF}
-		{D6CD666E-2EE5-4A23-87DE-2EC9A781B576} = {02C4255F-74CF-404C-93E3-526A2DBC9D2F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {561F0871-294D-4DF9-865C-3A52E61E28C1}
