@@ -14,7 +14,7 @@ namespace BlastoiseApp.Web.Controllers
 
 		public async Task<IActionResult> Index()
 		{
-			var pokemons = await _pokemonService.GetAllAsync();
+			List<PokemonListDTO> pokemons = await _pokemonService.GetAllAsync();
 
 			return View(pokemons);
 		}

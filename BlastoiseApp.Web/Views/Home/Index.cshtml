@@ -1,4 +1,6 @@
-﻿@{
+﻿@model HomeModel
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -8,7 +10,7 @@
 
 <div>
     <h1 class="texto-home">
-        Sua Aventura Pokemón <br />Começa Aqui
+        @Model.TextoInicio
     </h1>
     <p class="texto-meio">
         Crie, evolua e torne-se um Mestre Pokémon!
@@ -20,99 +22,39 @@
 </div>
 
 
+
 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3">
+
+@foreach (var card in Model.ListaCard)
+{
     <div class="col">
         <div class="card border-warning shadow p-3 mb-5 bg-body-tertiary rounded card h-75 w-100">
             <div class="card-body">
                 <h5 class="card-title text-center mb-4"><i class="bi bi-bookmark-fill"></i></h5>
-                <h5 class="card-title text-center mb-3 text-secondary">Pocket Monsters</h5>
-                <p class="card-text mb-4">O nome “Pokémon” é uma abreviação de Pocket Monsters ("monstros de bolso"), como eram chamados no Japão no lançamento original.
+                <h5 class="card-title text-center mb-3 text-secondary">@card.Titulo</h5>
+                <p class="card-text mb-4">
+                    @card.Texto
                 </p>
             </div>
         </div>
     </div>
-
-    <div class="col">
-        <div class="card border-warning shadow p-3 mb-5 bg-body-tertiary rounded h-75 w-100">
-            <div class="card-body">
-                <h5 class="card-title text-center mb-4"><i class="bi bi-bookmark-fill"></i></h5>
-                <h5 class="card-title text-center mb-3 text-secondary">+ 1.000 Pokémons</h5>
-                <p class="card-text">Desde 1996, o número de Pokémon só cresceu. Com as gerações mais recentes, já passamos de 1.000 espécies diferentes!</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="col">
-        <div class="card border-warning shadow p-3 mb-5 bg-body-tertiary rounded h-75 w-100">
-            <div class="card-body">
-                <h5 class="card-title text-center mb-4"><i class="bi bi-bookmark-fill"></i></h5>
-                <h5 class="card-title text-center mb-3 text-secondary">Guinness World Records</h5>
-                <p class="card-text">A franquia Pokémon tem vários recordes, incluindo o jogo de RPG mais vendido na história do entretenimento (Pokémon Red/Blue/Green).</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="col">
-        <div class="card border-warning shadow p-3 mb-5 bg-body-tertiary rounded h-75 w-100">
-            <div class="card-body">
-                <h5 class="card-title text-center mb-4"><i class="bi bi-bookmark-fill"></i></h5>
-                <h5 class="card-title text-center mb-3 text-secondary">MissingNo.</h5>
-                <p class="card-text">Abreviação de “Missing Number” é um Pokémon glitched que aparece nos jogos Pokémon Red e Blue, resultado de falhas na programação.</p>
-            </div>
-        </div>
-    </div>
+}
 </div>
-
 
 <div class="row">
     <div class="col-lg-5 mx-auto">
         <div id="carouselExample" class="carrossel-pokemon carousel slide">
             <div class="carousel-inner text-center">
-                <div class="carousel-item active">
-                    <h5>Bulbasaur</h5>
-                    <p>001</p>
-                    <img src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/001.png" alt="Bulbasaur">
-                </div>
-                <div class="carousel-item">
-                    <h5>Ivysaur</h5>
-                    <p>002</p>
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TKxwSvCZiKFfyQoVYLNWshaSMvasKkz3rA&s" alt="Ivysaur">
-                </div>
-                <div class="carousel-item">
-                    <h5>Venusaur</h5>
-                    <p>003</p>
-                    <img src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/003.png" alt="Venusaur">
-                </div>
-                <div class="carousel-item">
-                    <h5>Charmander</h5>
-                    <p>004</p>
-                    <img src="https://i.pinimg.com/736x/fd/9d/8a/fd9d8ab48dec6ab12cbbf31edd92040b.jpg" alt="Charmander">
-                </div>
-                <div class="carousel-item">
-                    <h5>Charmeleon</h5>
-                    <p>005</p>
-                    <img src="https://img.pokemondb.net/artwork/large/charmeleon.jpg" alt="Charmeleon">
-                </div>
-                <div class="carousel-item">
-                    <h5>Charizard</h5>
-                    <p>006</p>
-                    <img src="https://i.pinimg.com/736x/84/0a/33/840a33ff2fd112ee82d1413a7af18a85.jpg" alt="Charizard">
-                </div>
-                <div class="carousel-item">
-                    <h5>Squirtle</h5>
-                    <p>007</p>
-                    <img src="https://i.pinimg.com/736x/b6/1e/b4/b61eb48863d284064dd8f114058f7162.jpg" alt="Squirtle">
-                </div>
-                <div class="carousel-item">
-                    <h5>Wartortle</h5>
-                    <p>008</p>
-                    <img src="https://i.pinimg.com/736x/2a/6e/65/2a6e65da5515583b6f087870facf07aa.jpg" alt="Wartortle">
-                </div>
-                <div class="carousel-item">
-                    <h5>Blastoise</h5>
-                    <p>009</p>
-                    <img src="https://i.pinimg.com/736x/30/bc/3b/30bc3b60fa9fc9588390f45c4af1680c.jpg" alt="Blastoise">
-                </div>
+
+                @for (int i = 0; i < Model.ListaPokemon.Count; i++)
+                {
+                    <div class="carousel-item @(i == 0 ? "active" : "")">
+                        <h5>@Model.ListaPokemon[i].Nome</h5>
+                        <p>@Model.ListaPokemon[i].Codigo</p>
+                        <img src="@Model.ListaPokemon[i].LinkImagem" alt="@Model.ListaPokemon[i].Nome">
+                    </div>
+                }
+
 
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
